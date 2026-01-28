@@ -1,7 +1,5 @@
-# algorithms/genetic_algorithm.py
 import random
 from src.utils.board import calculate_collisions
-
 
 POP_SIZE = 20
 GENES_PER_QUEEN = 3 
@@ -13,18 +11,18 @@ MAX_GENERATIONS = 1000
 def decode_chromosome(bits):
     """Converte lista de 24 bits para lista de 8 inteiros (tabuleiro)."""
     board = []
-    # Itera de 3 em 3 bits
+    # Iterates every 3 bits
     for i in range(0, len(bits), GENES_PER_QUEEN):
         segment = bits[i:i+GENES_PER_QUEEN]
-        # Converte binário para int
+        # Convert binary to int
         val = int("".join(map(str, segment)), 2)
         board.append(val)
     return board
 
 def fitness(bits):
     """
-    Fitness para Roleta deve ser maior = melhor.
-    Max colisões = 28. Fitness = 28 - colisões.
+    Fitness for Roulette should be bigger = better.
+    Max theoretical collisions = 28. Fitness = 28 - collisions.
     """
     board = decode_chromosome(bits)
     collisions = calculate_collisions(board)
@@ -55,10 +53,11 @@ def mutate(individual):
     new_ind = individual[:]
     for i in range(len(new_ind)):
         if random.random() < MUTATION_RATE:
-            new_ind[i] = 1 - new_ind[i] 
+            new_ind[i] = 1 - new_ind[i] # Bit flip
     return new_ind
 
 def genetic_algorithm():
+    # Inicialization
     population = [[random.randint(0, 1) for _ in range(CHROMOSOME_SIZE)] for _ in range(POP_SIZE)]
     
     generation = 0
@@ -66,6 +65,7 @@ def genetic_algorithm():
     best_collisions = float('inf')
     
     while generation < MAX_GENERATIONS:
+        # Evaluation
         fitness_scores = [fitness(ind) for ind in population]
         
         max_fit = max(fitness_scores)
@@ -80,7 +80,8 @@ def genetic_algorithm():
         if current_collisions == 0: 
             break
             
-        new_pop = [elite_individual]
+        # Elitism
+        new_pop = [elite_individual] 
         
         while len(new_pop) < POP_SIZE:
             parent1 = roulette_selection(population, fitness_scores)
