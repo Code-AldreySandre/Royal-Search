@@ -112,7 +112,7 @@ Thus, critical processes such as Log Generation (CSV) and Statistical Report Vis
 
 ![Use Case Diagram](references/usecase_uml.png)
 
-## 3. Fluxo de Execução Experimental (Diagrama de Sequência)
+## 3. Experimental Execution Flow (Sequence Diagram)
 
 To meet the statistical requirements of the work (calculation of mean and standard deviation), the system does not execute the algorithm just once. The sequence diagram details the lifecycle of the run_experiment function:
 
@@ -140,7 +140,7 @@ This flow represents a local search with random neighborhood restart.
 
 ![Stocastic Activity Diagram](references/activity_stocastic_uml.png)
 
-#### B) Algoritmo Genético
+#### B) Genetic Algorithm
 This represents the evolutionary approach based on the strict parameters defined in the project.
 
 **Initialization**: Population of 20 individuals with binary coding.
