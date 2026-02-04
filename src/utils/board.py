@@ -1,10 +1,6 @@
 import random
 
 def calculate_collisions(board):
-    """
-    Calculates the number of pairs of queens attacking each other.
-    Board is a list of 8 integers, where the index is the column and the value is the row.
-    """
     n = len(board)
     collisions = 0
     for i in range(n):
@@ -14,5 +10,4 @@ def calculate_collisions(board):
     return collisions
 
 def random_board():
-    """Gera um tabuleiro aleatório (vetor de 0 a 7)."""
     return [random.randint(0, 7) for _ in range(8)]

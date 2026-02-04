@@ -14,11 +14,10 @@ logging.basicConfig(
     level=logging.INFO,
     format=LOG_FORMAT,
     handlers=[
-        
         logging.FileHandler(os.path.join(LOG_DIR, "app_execution.log")),
         logging.StreamHandler(sys.stdout)
     ]
 )
 
-logger = logging.getLogger("RainhasApp")
-logger.info(" Ambiente inicializado. Pastas de dados verificadas.")
+logger = logging.getLogger("RoyalSearch")
+logger.info("Ambiente inicializado.")

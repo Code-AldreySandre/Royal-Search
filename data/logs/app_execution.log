@@ -1,0 +1,6 @@
+2026-01-28 16:56:57,849 - INFO - Ambiente inicializado.
+2026-01-28 16:56:58,218 - INFO - Iniciando 50 execuções para: Stochastic Hill Climbing...
+2026-01-28 16:56:58,298 - INFO - Finalizado: Stochastic Hill Climbing
+2026-01-28 16:56:58,311 - INFO - Iniciando 50 execuções para: Genetic Algorithm...
+2026-01-28 16:57:03,508 - INFO - Finalizado: Genetic Algorithm
+2026-01-28 16:57:03,538 - INFO - Dados salvos em: /home/aldrey-sandre/Documents/GitHub/Royal-Search/data
